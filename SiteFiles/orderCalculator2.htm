@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<p>
+<script language="JavaScript">
+
+function getVars()
+{
+	//get the URL that contains variables passed from the last page
+	var passedURL = String(window.location);
+	//find where the string of variables begins
+	var startOfVars = passedURL.indexOf('?');
+	//create an array to store the variables
+	var passedVars = new Array();
+
+	//do nothing if there are no variables passed
+	if (startOfVars != -1) 
+	{
+		//split the string of variables up with the delineator &
+		var varString = passedURL.substring(startOfVars+1, passedURL.length).split('&');
+		
+		//for each item in the list of variables
+		for (var i=0; i < varString.length; i++) 
+		{
+			//split up the variable name and its value
+			varNamesAndVals = varString[i].split('=');
+			//associate the name of the variable with the value
+			passedVars[varNamesAndVals[0]] = varNamesAndVals[1];
+		}//end for
+	}//end if
+//return the array
+
+return passedVars;
+}//end getVars();
+
+</script>
+
+<h4>Please print this page and send it with a check made payable to:</h4>
+Jan Taylor<br>
+917 Park View Way<br>
+Missoula MT, 59803<br>
+<p></p>
+
+<script language="JavaScript">
+passedVars = getVars();
+
+var butteShortLineCopies = Number(unescape(passedVars["butteShortLineCopies"]));
+var railsGoldSilverCopies = Number(unescape(passedVars["railsGoldSilverCopies"]));
+var mullanPassCopies = Number(unescape(passedVars["mullanPassCopies"]));
+var railsGoldSilver2Copies = Number(unescape(passedVars["railsGoldSilver2Copies"]));
+var butteShortLinePrice = Number(unescape(passedVars["butteShortLinePrice"]));
+var railsGoldSilverPrice = Number(unescape(passedVars["railsGoldSilverPrice"]));
+var mullanPassPrice = Number(unescape(passedVars["mullanPassPrice"]));
+var railsGoldSilver2Price = Number(unescape(passedVars["railsGoldSilver2Price"]));
+
+var tempString = unescape(passedVars["custName"]);
+var repItem = "+";
+var insSpace = new String (" ");
+var custName = tempString.replace(repItem, insSpace);
+
+tempString = unescape(passedVars["custAddr"]);
+var custAddr = tempString.replace(repItem, insSpace);
+for(i=0;i<5;i++)
+{
+	tempString = custAddr;
+	custAddr = tempString.replace(repItem, insSpace);
+}
+
+tempString = unescape(passedVars["custCity"]);
+var custCity = tempString.replace(repItem, insSpace);
+
+tempString = unescape(passedVars["custState"]);
+var custState = tempString.replace(repItem, insSpace);
+
+tempString = unescape(passedVars["custZip"]);
+var custZip = tempString.replace(repItem, insSpace);
+
+var totalBooksOrdered = butteShortLineCopies + railsGoldSilverCopies + mullanPassCopies + railsGoldSilver2Copies;
+var shippingCost = 5 + (totalBooksOrdered - 1);
+var totalCost = (butteShortLineCopies * butteShortLinePrice) + (railsGoldSilverCopies * railsGoldSilverPrice) + (mullanPassCopies * mullanPassPrice) + (railsGoldSilver2Copies * railsGoldSilver2Price) + shippingCost;
+
+
+document.write("<table border='0' width='550px' cellpadding='3'>");
+
+document.write("<tr>");
+document.write("<td>Please send me " + butteShortLineCopies + " copies of The Butte Short Line at " + butteShortLinePrice + " each</td><td>$ " + (butteShortLinePrice * butteShortLineCopies) + " </td>");
+document.write("</tr>");
+
+document.write("<tr>");
+document.write("<td>Please send me " + railsGoldSilverCopies + " copies of Rails to Gold and Silver - Vol 1 at " + railsGoldSilverPrice + " each</td><td>$ " + (railsGoldSilverPrice * railsGoldSilverCopies) + " </td>");
+document.write("</tr>");
+
+document.write("<tr>");
+document.write("<td>Please send me " + mullanPassCopies + " copies of Mullan Pass at " + mullanPassPrice + " each</td><td>$ " + (mullanPassPrice * mullanPassCopies) + " </td>");
+document.write("</tr>");
+
+document.write("<tr>");
+document.write("<td>Please send me " + railsGoldSilver2Copies + " copies of Rails to Gold and Silver - Vol II at " + railsGoldSilver2Price + " each</td><td>$ " + (railsGoldSilver2Price * railsGoldSilver2Copies) + " </td>");
+document.write("</tr>");
+
+document.write("<tr><td>Shipping Cost:</td><td>$ " + shippingCost + "</td></tr>");
+
+document.write("<tr><td>TOTAL Cost:</td><td><strong>$ " + totalCost + "</strong></td></tr>");
+
+
+document.write("</table>");
+
+
+</script>
+
+<h4>Shipping Information:</h4>
+<script language="JavaScript">
+	document.write("<table border='0' width='550px' cellpadding='3'>");
+	document.write("<tr><td>Name: </td><td><strong>" + custName + "</strong></td></tr>");
+	document.write("<tr><td>Address: </td><td><strong>" + custAddr + "</strong></td></tr>");
+	document.write("<tr><td>City, State, and Zip: </td><td><strong>" + custCity + ", " + custState + "  " + custZip + "</strong></td></tr>");
+	document.write("</table>");
+</script>
+
+<p>Published by Pictorial Histories Publishing Co., Inc. Missoula, MT  59801</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4086747-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

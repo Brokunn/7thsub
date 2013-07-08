@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/mainTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Bill Taylor, Jan Taylor, The Butte Short Line, Rails to Gold and Silver, Mullan Pass, Northern Pacific, Rail Roads, Northwest, History">
+<meta name="author" content="Webmasters: Nick Venable (NickVenable@yahoo.com)">
+<link href="../Style/Talor01Style.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body class="mainBackground">
+
+<!-- Display the title graphics: siteTitleRight and titleLineExtender will align with 
+the right side of the screen for window stretching effects. -->
+
+<div class="siteTitle"> </div>
+
+<div class="siteTitleRight"></div>
+
+<div class="titleLineExtender"></div>
+
+<!-- This table displays the navigation menu -->
+
+<table class="leftMenu" width="100%" border="0" cellpadding="0" cellspacing="5">
+	
+<tr> 
+		
+<td class="tdBackground"><a href="../index.htm" class="leftMenuText">Main Page</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="ourBooks.htm" class="leftMenuText">Our Books</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="orderCalculator.htm" class="leftMenuText">Ordering</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="http://search.ebay.com/_W0QQfgtpZ1QQfrppZ50QQfsooZ1QQfsopZ1QQsassZ7thsub" class="leftMenuText">Rail Road Antiques</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="aboutUs.htm" class="leftMenuText">About Us</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="ourLinks.htm" class="leftMenuText">Links</a></td>
+</tr>
+	
+<tr> 
+		
+<td class="tdBackground"><a href="contactUs.htm" class="leftMenuText">Contact Us</a></td>
+</tr>
+</table>
+
+<!-- This section is for the content of this page -->
+
+
+<div class="mainContent"> 
+	<!-- InstanceBeginEditable name="PageTitle" --> 
+		
+<h1>Order Calculator</h1>
+<!-- InstanceEndEditable --> 
+	
+	<!-- InstanceBeginEditable name="Content" --> 
+<script language="JavaScript">
+	var butteShortLinePrice = 19.95;
+	var railsGoldSilverPrice = 19.95;
+	var mullanPassPrice = 19.95;
+	var postage = 4.00;
+	var additionalPostage = 1.00;
+</script>
+
+<form name="orderForm" method="post" action="../orderPrintPage.htm">
+<table width="100%" border="1" align="center">
+	
+<tr>
+		
+<td><p>Please send me 
+<input name="butteShortLineCopies" type="text" value="0" size="5" onMouseOut="calcTotal()">
+ copies of <em><strong></strong></em></p></td>
+<td><p><em><strong>The Butte Short Line</strong></em></p></td>
+<td><p>at $
+<script language="JavaScript">document.write(butteShortLinePrice)</script>
+ each.</p></td>
+</tr>
+	
+<tr>
+		
+<td><p>Please send me 
+<input name="railsGoldSilverCopies" type="text" value="0" size="5">
+ copies of</p></td>
+<td><p><em><strong>Rails to Gold and Silver - Vol. I</strong></em></p></td>
+<td><p>at $
+<script language="JavaScript">document.write(railsGoldSilverPrice)</script>
+ each. </p></td>
+</tr>
+	
+<tr>
+		
+<td><p>Please send me 
+<input name="mullanPassCopies" type="text" value="0" size="5">
+ copies of</p></td>
+<td><p><em><strong>Mullan Pass</strong></em></p></td>
+<td><p>at $
+<script language="JavaScript">document.write(mullanPassPrice)</script>
+ each.</p></td>
+</tr>
+	
+	
+<input name="butteShortLinePrice" type="hidden" value="<script language='JavaScript'>document.write(butteShortLinePrice)</script>">
+	
+<input name="railsGoldSilverPrice" type="hidden" value="<script language='JavaScript'>document.write(railsGoldSilverPrice)</script>">
+	
+<input name="mullanPassPrice" type="hidden" value="<script language='JavaScript'>document.write(mullanPassPrice)</script>">
+
+</table>
+<p><em></em> <br>
+Add $
+
+<script language="JavaScript">document.write(postage)</script>
+postage for the first copy	 and $
+
+<script language="JavaScript">document.write(additionalPostage)</script>
+for each additional copy:</p>
+<p><a href="orderForm.htm">Click here for a blank printable order form.</a><br>
+<em></em> 
+</p>
+</form>
+<!-- InstanceEndEditable --></div>
+
+</body>
+<!-- InstanceEnd --></html>
